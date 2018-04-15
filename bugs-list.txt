@@ -1,0 +1,12 @@
+Name: Brian Quiroz
+Class: EECS 448
+Assignment: Lab 4
+
+Bugs Found:
+- From test1 and test8, we can infer that isEmpty() always returns true no matter what (even if the list is not empty).
+
+- From tests 7 and 9 - 13, we can conclude that since size() works corrrectly, the bugs are that neither removeFront() nor removeBack() remove any value(s) from the list.
+
+- From tests 14 - 17 we can infer that removeBack() and removeFront() always return true no matter what (even if the list is non-empty).
+
+
