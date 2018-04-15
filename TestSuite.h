@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <fstream>
 #include "LinkedListOfInts.h"
 
 #ifndef TESTSUITE_H
@@ -32,8 +31,6 @@ class TestSuite {
     void test18_searchOnEmptyList();
     void test19_searchValueNotOnList();
     void test20_searchValueOnList();
-
-    std::ofstream outFile;
 };
 
 #endif

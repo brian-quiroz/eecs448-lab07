@@ -28,7 +28,7 @@ void TestSuite::runTests() {
 }
 
 void TestSuite::test1_isEmptyTrue() {
-  std::cout << "Test 1: isEmpty() returns correct value (false) if the list is empty: ";
+  std::cout << "Test 1: isEmpty() returns correct value (true) if the list is empty: ";
   LinkedListOfInts testableList;
   auto testVector = testableList.toVector();
   //We know the constructor and toVector work correctly, so testVector.empty() MUST be true
@@ -51,7 +51,7 @@ void TestSuite::test2_sizeOnEmptyList() {
 }
 
 void TestSuite::test3_SingleaddBack() {
-  std::cout << "Test 3: size() returns correct value after 1 addBack(): n";
+  std::cout << "Test 3: size() returns correct value after 1 addBack(): ";
   LinkedListOfInts testableList;
   testableList.addBack(1);
   if (testableList.size() == 1) {
@@ -103,7 +103,7 @@ void TestSuite::test6_MultipleaddFront() {
 }
 
 void TestSuite::test7_sizeAfterAdds() {
-  std::cout << "Test 7: size() returns correct value after adds: ";
+  std::cout << "Test 7: size() returns correct value (size of vector) after adds: ";
   LinkedListOfInts testableList;
   const int randomNumber = rand() % 10 + 1;
   //std::cout << randomNumber << std::endl;
@@ -137,7 +137,7 @@ void TestSuite::test8_isEmptyFalse() {
 }
 
 void TestSuite::test9_SingleremoveBack() {
-  std::cout << "Test 9: size() returns correct value after single removeBack(): ";
+  std::cout << "Test 9: size() returns correct value (adds - removes) after single removeBack(): ";
   LinkedListOfInts testableList;
   const int randomNumber = rand() % 18 + 2;
   //std::cout << randomNumber << std::endl;
@@ -154,7 +154,7 @@ void TestSuite::test9_SingleremoveBack() {
 }
 
 void TestSuite::test10_SingleremoveFront() {
-  std::cout << "Test 10: size() returns correct value after single removeFront(): ";
+  std::cout << "Test 10: size() returns correct value (adds - removes) after single removeFront(): ";
   LinkedListOfInts testableList;
   const int randomNumber = rand() % 18 + 2;
   //std::cout << randomNumber << std::endl;
@@ -171,7 +171,7 @@ void TestSuite::test10_SingleremoveFront() {
 }
 
 void TestSuite::test11_MultipleremoveBack() {
-  std::cout << "Test 11: size() returns correct value after multiple removeBack(): ";
+  std::cout << "Test 11: size() returns correct value (adds - removes) after multiple removeBack(): ";
   LinkedListOfInts testableList;
   const int randomNumber1 = rand() % 10 + 11;
   //std::cout << randomNumber1 << std::endl;
@@ -192,7 +192,7 @@ void TestSuite::test11_MultipleremoveBack() {
 }
 
 void TestSuite::test12_MultipleremoveFront() {
-  std::cout << "Test 12: size() returns correct value after multiple removeFront(): ";
+  std::cout << "Test 12: size() returns correct value (adds - removes) after multiple removeFront(): ";
   LinkedListOfInts testableList;
   const int randomNumber1 = rand() % 10 + 11;
   //std::cout << randomNumber1 << std::endl;
@@ -213,7 +213,7 @@ void TestSuite::test12_MultipleremoveFront() {
 }
 
 void TestSuite::test13_sizeAfterRemoves() {
-  std::cout << "Test 13: size() returns correct value after removes: ";
+  std::cout << "Test 13: size() returns correct value (size of vector) after removes: ";
   LinkedListOfInts testableList;
   const int randomNumber1 = rand() % 10 + 11;
   //std::cout << randomNumber1 << std::endl;
@@ -253,7 +253,7 @@ void TestSuite::test14_removeBackOnNonemptyList() {
 }
 
 void TestSuite::test15_removeFrontOnNonemptyList() {
-  std::cout << "Test 15: removeFront() returns correct value (true) when called on an empty list: ";
+  std::cout << "Test 15: removeFront() returns correct value (true) when called on a nonempty list: ";
   LinkedListOfInts testableList;
   const int randomNumber = rand() % 10 + 1;
   //std::cout << randomNumber << std::endl;
