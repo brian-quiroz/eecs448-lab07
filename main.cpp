@@ -5,6 +5,8 @@
 *	@brief driver for LinkedList demo
 */
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "TestSuite.h"
 #include "LinkedListOfInts.h"
 

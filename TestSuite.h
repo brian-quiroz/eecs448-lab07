@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "LinkedListOfInts.h"
 
 #ifndef TESTSUITE_H
@@ -9,9 +11,13 @@ class TestSuite {
     TestSuite();
     void runTests();
   private:
-    void test1_isEmpty();
-    void test2();
-    void testC();
+    void test1_isEmptyTrue();
+    void test2_sizeOnEmptyList();
+    void test3_SingleaddBack();
+    void test4_SingleaddFront();
+    void test5_MultipleaddBack();
+    void test6_MultipleaddFront();
+    void test7_isEmptyFalse();
 };
 
 #endif
