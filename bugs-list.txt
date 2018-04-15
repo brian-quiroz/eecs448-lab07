@@ -1,6 +1,6 @@
 Name: Brian Quiroz
 Class: EECS 448
-Assignment: Lab 4
+Assignment: Lab 7
 
 Bugs Found:
 - From test1 and test8, we can infer that isEmpty() always returns true no matter what (even if the list is not empty).
