@@ -25,11 +25,13 @@ class TestSuite {
     void test11_MultipleremoveBack();
     void test12_MultipleremoveFront();
     void test13_sizeAfterRemoves();
-    void test14_removeBackOnEmptyList();
-    void test15_removeFrontOnEmptyList();
-    void test16_searchOnEmptyList();
-    void test17_searchValueNotOnList();
-    void test18_searchValueOnList();
+    void test14_removeBackOnNonemptyList();
+    void test15_removeFrontOnNonemptyList();
+    void test16_removeBackOnEmptyList();
+    void test17_removeFrontOnEmptyList();
+    void test18_searchOnEmptyList();
+    void test19_searchValueNotOnList();
+    void test20_searchValueOnList();
 
     std::ofstream outFile;
 };

@@ -17,12 +17,14 @@ void TestSuite::runTests() {
   test10_SingleremoveFront();
   test11_MultipleremoveBack();
   test12_MultipleremoveFront();
-  /*test13_sizeAfterRemoves();
-  test14_removeBackOnEmptyList();
-  test15_removeFrontOnEmptyList();
-  test16_searchOnEmptyList();
-  test17_searchValueNotOnList();
-  test18_searchValueOnList();*/
+  test13_sizeAfterRemoves();
+  test14_removeBackOnNonemptyList();
+  test15_removeFrontOnNonemptyList();
+  test16_removeBackOnEmptyList();
+  test17_removeFrontOnEmptyList();
+  test18_searchOnEmptyList();
+  test19_searchValueNotOnList();
+  test20_searchValueOnList();
 }
 
 void TestSuite::test1_isEmptyTrue() {
@@ -204,6 +206,129 @@ void TestSuite::test12_MultipleremoveFront() {
   }
   //std::cout << testableList.size() << " vs " << randomNumber1 - randomNumber2 << std::endl;
   if (testableList.size() == randomNumber1 - randomNumber2) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test13_sizeAfterRemoves() {
+  std::cout << "Test 13: size() returns correct value after removes: ";
+  LinkedListOfInts testableList;
+  const int randomNumber1 = rand() % 10 + 11;
+  //std::cout << randomNumber1 << std::endl;
+  for (int i = 0; i < randomNumber1; i++) {
+    testableList.addBack(i);
+    testableList.addFront(i);
+  }
+  const int randomNumber2 = rand() % 9 + 2;
+  //std::cout << randomNumber2 << std::endl;
+  for (int i = 0; i < randomNumber2; i++) {
+    testableList.removeBack();
+    testableList.removeFront();
+  }
+  auto testVector = testableList.toVector();
+  //std::cout << testVector.size() << " vs " << testableList.size() << std::endl;
+  if (testVector.size() == testableList.size()) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test14_removeBackOnNonemptyList() {
+  std::cout << "Test 14: removeBack() returns correct value (true) when called on a nonempty list: ";
+  LinkedListOfInts testableList;
+  const int randomNumber = rand() % 10 + 1;
+  //std::cout << randomNumber << std::endl;
+  for (int i = 0; i < randomNumber; i++) {
+    testableList.addBack(i);
+    testableList.addFront(i);
+  }
+  if (testableList.removeBack()) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test15_removeFrontOnNonemptyList() {
+  std::cout << "Test 15: removeFront() returns correct value (true) when called on an empty list: ";
+  LinkedListOfInts testableList;
+  const int randomNumber = rand() % 10 + 1;
+  //std::cout << randomNumber << std::endl;
+  for (int i = 0; i < randomNumber; i++) {
+    testableList.addBack(i);
+    testableList.addFront(i);
+  }
+  if (testableList.removeFront()) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test16_removeBackOnEmptyList() {
+  std::cout << "Test 16: removeBack() returns correct value (false) when called on an empty list: ";
+  LinkedListOfInts testableList;
+  testableList.addFront(1);
+  if (!testableList.removeBack()) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test17_removeFrontOnEmptyList() {
+  std::cout << "Test 17: removeFront() returns correct value (false) when called on an empty list: ";
+  LinkedListOfInts testableList;
+  if (!testableList.removeFront()) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test18_searchOnEmptyList() {
+  std::cout << "Test 18: search() returns correct value (false) when called on an empty list: ";
+  LinkedListOfInts testableList;
+  if (!testableList.search(1)) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test19_searchValueNotOnList() {
+  std::cout << "Test 19: search() returns correct value (false) when the value is not found on the list: ";
+  LinkedListOfInts testableList;
+  for (int i = 0; i < 5; i++) {
+    testableList.addBack(i);
+    testableList.addFront(i + 5);
+  }
+  const int randomNumber = rand() % 991 + 10;
+  //std::cout << randomNumber << std::endl;
+  if (!testableList.search(randomNumber)) {
+    std::cout << "PASSED\n";
+  } else {
+    std::cout << "FAILED\n";
+  }
+}
+
+void TestSuite::test20_searchValueOnList() {
+  std::cout << "Test 20: search() returns correct value (true) when the value is found on the list: ";
+  LinkedListOfInts testableList;
+  bool foundAll = true;
+  for (int i = 0; i < 5; i++) {
+    testableList.addBack(i);
+    testableList.addFront(i + 5);
+  }
+  for (int i = 0; i < 10; i++) {
+    if (!testableList.search(i)) {
+      foundAll = false;
+    }
+  }
+  if (foundAll) {
     std::cout << "PASSED\n";
   } else {
     std::cout << "FAILED\n";
